@@ -1,0 +1,178 @@
+<mvc:View
+    controllerName="assignment.controller.Table"
+    xmlns:c="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:m="sap.m"
+    xmlns:t="sap.ui.table"
+    xmlns:f="sap.f"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt"
+    xmlns:layout="sap.ui.layout"
+    height="100%"
+>
+    <FlexBox
+        justifyContent="End"
+        class="sapUiLargeMarginTop"
+    >
+        <HBox class="sapUiSmallMarginEnd">
+            <Text
+                text="新担当者"
+                class="sapUiSmallMarginTop sapUiSmallMarginEnd"
+            />
+            <Input
+                id="productInput"
+                showSuggestion="true"
+                showValueHelp="true"
+                valueHelpRequest=".onValueHelpRequest"
+                suggestionItems="{/Employees}"
+            >
+                <suggestionItems>
+                    <core:Item text="{FirstName}" />
+                </suggestionItems>
+            </Input>
+        </HBox>
+
+        <HBox>
+            <Button
+                text="一括担当者変更"
+                class="sapUiSmallMarginEnd"
+                press="onFilterPosts"
+            />
+            <Button
+                text="追加"
+                class="sapUiSmallMarginEnd"
+                press="onAdd"
+            />
+            <Button
+                text="削除"
+                type="Reject"
+                class="textButton sapUiSmallMarginEnd"
+                press="deleteRow"
+            />
+        </HBox>
+    </FlexBox>
+
+    <t:Table
+        id="ZMMT1002"
+        rows="{/Employees}"
+        selectionMode="MultiToggle"
+    >
+        <t:columns>
+            <t:Column width="3rem">
+                <t:template>
+                    <m:Text
+                        text="{EmployeeID}"
+                        wrapping="false"
+                    />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="購買グループ" />
+                <t:template>
+                    <m:Input value="{FirstName} {LastName}" />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="呼び名" />
+                <t:template>
+                    <Input
+                        id="BISMT001"
+                        value="{City}"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest"
+                        suggestionItems="{/Employees}"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{City}" />
+                        </suggestionItems>
+                    </Input>
+                </t:template>
+            </t:Column>
+            <t:Column hAlign="Begin">
+                <m:Label text="仕入先" />
+                <t:template>
+                    <Input
+                        id="LIFNR001"
+                        showSuggestion="true"
+                        value="{Country}"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest"
+                        suggestionItems="{/Employees}"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{Country}" />
+                        </suggestionItems>
+                    </Input>
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="仕入先名" />
+                <t:template>
+                    <m:Label text="{PostalCode}" />
+                </t:template>
+            </t:Column>
+            <t:Column width="4rem">
+                <CheckBox />
+                <t:template>
+                    <CheckBox />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="担当者" />
+                <t:template>
+                    <Input
+                        id="Z_ASGID001"
+                        showSuggestion="true"
+                        value="{Extension}"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest"
+                        suggestionItems="{/Employees}"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{Extension}" />
+                        </suggestionItems>
+                    </Input>
+                </t:template>
+            </t:Column>
+
+            <t:Column>
+                <m:Label text="担当者名" />
+                <t:template>
+                    <m:Input value="{Extension}" />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="品目" />
+                <t:template>
+                    <Input
+                        id="EMATN001"
+                        showSuggestion="true"
+                        value="{Extension}"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest"
+                        suggestionItems="{/Employees}"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{Extension}" />
+                        </suggestionItems>
+                    </Input>
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="プラント" />
+                <t:template>
+                    <m:Input value="{Extension}" />
+                </t:template>
+            </t:Column>
+            <t:Column>
+                <m:Label text="品名" />
+                <t:template>
+                    <m:Text text="{Extension}" />
+                </t:template>
+            </t:Column>
+        </t:columns>
+    </t:Table>
+</mvc:View>

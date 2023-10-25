@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog
+		id="selectDialog4"
+		title="Employees"
+		items="{/Employees}"
+		search=".onValueHelpSearch4"
+		confirm=".onValueHelpClose4"
+		cancel=".onValueHelpClose4">
+		<StandardListItem
+			iconDensityAware="false"
+			iconInset="false"
+			title="{Country}"
+			description="{PostalCode}"
+			/>
+
+	</SelectDialog>
+</core:FragmentDefinition>
