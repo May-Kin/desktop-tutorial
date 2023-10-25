@@ -180,25 +180,62 @@ sap.ui.define([
 
         const oView = this.getView();
         let sInput1 = oView.byId("Z_ASGID001").getValue();
-        // console.log("oInput1", sInput1);
-        // var sInput2 = oView.byId("EKGRP001").getValue();
+        let sInput2 = oView.byId("EKGRP001").getValue();
         let sInput3 = oView.byId("LIFNR001").getValue();
-        // let sInput4 = oView.byId("BISMT001").getValue();
-        // let sInput5 = oView.byId("EMATN001").getValue();
-        // let sInput6 = oView.byId("WERKS001").getValue();
-        // let sInput7 = oView.byId("MAKT001").getValue();
+        let sInput4 = oView.byId("BISMT001").getValue();
+        let sInput5 = oView.byId("EMATN001").getValue();
+        let sInput6 = oView.byId("WERKS001").getValue();
+        let sInput7 = oView.byId("MAKT001").getValue();
+
+        // console.log("oInput2", sInput2);
 
         const oTable = this.byId(sap.ui.core.Fragment.createId("innerTable", "ZMMT1002"));
 
-        let aFilters = [];
-        aFilters.push(new sap.ui.model.Filter("FirstName", sap.ui.model.FilterOperator.Contains, sInput1, sInput3));
-        console.log("filter", aFilters);
+        let aFilters1 = [];
+        let aFilters2 = [];
+        let aFilters3 = [];
+        let aFilters4 = [];
+        let aFilters5 = [];
+        let aFilters6 = [];
+        let aFilters7 = [];
 
-        console.log("oTable", oTable);
-        oTable.getBinding("rows").filter(aFilters);
+        aFilters1.push(new sap.ui.model.Filter("FirstName", sap.ui.model.FilterOperator.Contains, sInput1));
+        aFilters2.push(new sap.ui.model.Filter("City", sap.ui.model.FilterOperator.Contains, sInput2));
+        aFilters3.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput3));
+        aFilters4.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput4));
+        aFilters5.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput5));
+        aFilters6.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput6));
+        aFilters7.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput7));
+
+        // console.log("filter", aFilters1);
+
+        // console.log("oTable", oTable);
+        if (sInput1) {
+          oTable.getBinding("rows").filter(aFilters1);
+        }
+        if (sInput2) {
+          oTable.getBinding("rows").filter(aFilters2);
+        }
+
+        if (sInput3) {
+          oTable.getBinding("rows").filter(aFilters3);
+        }
+        if (sInput4) {
+          oTable.getBinding("rows").filter(aFilters4);
+        }
+        if (sInput5) {
+          oTable.getBinding("rows").filter(aFilters5);
+        }
+        if (sInput6) {
+          oTable.getBinding("rows").filter(aFilters6);
+        }
+        if (sInput7){
+          oTable.getBinding("rows").filter(aFilters7);
+        }
+
       },
 
-      
+
 
       clearInput: function (oEvent) {
 
@@ -217,6 +254,12 @@ sap.ui.define([
         sInput5.setValue("");
         sInput6.setValue("");
         sInput7.setValue("");
+
+        const oTable = this.byId(sap.ui.core.Fragment.createId("innerTable", "ZMMT1002"));
+
+        let aFilters = [];
+
+        oTable.getBinding("rows").filter(aFilters);
       },
 
 

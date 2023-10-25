@@ -57,5 +57,23 @@ sap.ui.define([
     },
 
 
+    onAddTable: function () {                               //to add a new row
+    //   var oItem = new sap.m.ColumnListItem({
+    //    cells: [new sap.m.Input(), new sap.m.Input(), new sap.m.Input({
+    //      showValueHelp: true
+
+    //    }), ]
+    //  });
+
+    //  let oTable = this.getView().byId("ZMMT1002");
+    //  oTable.addItem(oItem);
+
+
+      this._data.Employees.push({City : '', Country : ''});
+      this.jModel.refresh();//which will add the new record
+      console.log(this._data.Employees);
+    },
+
+
   });
 });

@@ -7,186 +7,166 @@
     xmlns:tnt="sap.tnt"
     xmlns:html="http://www.w3.org/1999/xhtml"
 >
+    <Page floatingFooter="true">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Image
+                        height="1.5rem"
+                        class="sapUiSmallMarginBegin"
+                        src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg"
+                    />
+                    <Title
+                        level="H1"
+                        text="資材担当者振分マスタ登録画面"
+                    />
+                </contentLeft>
+            </Bar>
+        </customHeader>
+        <content>
+            <FlexBox
+                wrap="Wrap"
+                width="70%"
+            >
+                <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
+                    <Text text="担当者" />
+                    <Input
+                        id="Z_ASGID001"
+                        showSuggestion="true"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest1"
+                        suggestionItems="{/Employees}"
+                        width="300px"
+                        class="sapUiSmallMarginEnd"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{FirstName}" />
+                        </suggestionItems>
+                    </Input>
+                </VBox>
 
-        <Page floatingFooter="true">
-            <customHeader>
-                <Bar>
-                    <contentLeft>
-                        <Image
-                            height="1.5rem"
-                            class="sapUiSmallMarginBegin"
-                            src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg"
-                        />
-                        <Title
-                            level="H1"
-                            text="資材担当者振分マスタ登録画面"
-                        />
-                    </contentLeft>
-                </Bar>
-            </customHeader>
-            <content>
-                <FlexBox
-                    wrap="Wrap"
-                    width="70%"
+                <VBox
+                    class="sapUiSmallMarginTop"
+                    height="50px"
                 >
-                    <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
-                        <Text text="担当者" />
-                        <Input
-                            id="Z_ASGID001"
-                            showSuggestion="true"
-                            showValueHelp="true"
-                            valueHelpRequest=".onValueHelpRequest1"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                            class="sapUiSmallMarginEnd"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{FirstName}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-
-                    <VBox
-                        class="sapUiSmallMarginTop"
-                        height="50px"
-                    >
-                        <Text text="購買グループ" />
-                        <Input
-                            id="EKGRP001"
-                            showSuggestion="true"
-                            valueHelpRequest=".onValueHelpRequest1"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                            class="sapUiSmallMarginEnd"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{FirstName}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-
-                    <VBox
-                        class="sapUiSmallMarginTop"
-                        height="50px"
-                    >
-                        <Text text="仕入先" />
-                        <Input
-                            id="LIFNR001"
-                            showSuggestion="true"
-                            showValueHelp="true"
-                            valueHelpRequest=".onValueHelpRequest2"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                            class="sapUiSmallMarginEnd"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{City}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-
-                    <VBox
-                        class="sapUiSmallMarginTop"
-                        height="50px"
-                    >
-                        <Text text="呼び名" />
-                        <Input
-                            id="BISMT001"
-                            showSuggestion="true"
-                            showValueHelp="true"
-                            valueHelpRequest=".onValueHelpRequest3"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                            class="sapUiSmallMarginEnd"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{Extension}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-
-                    <VBox
-                        class="sapUiSmallMarginBegin sapUiSmallMarginTop"
-                        height="50px"
-                    >
-                        <Text text="品目" />
-                        <Input
-                            id="EMATN001"
-                            showSuggestion="true"
-                            showValueHelp="true"
-                            valueHelpRequest=".onValueHelpRequest4"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                            class="sapUiSmallMarginEnd"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{Country}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-
-                    <VBox
-                        class="sapUiSmallMarginTop"
-                        height="50px"
-                    >
-                        <Text text="プラント" />
-                        <Input
-                            id="WERKS001"
-                            showSuggestion="true"
-                            valueHelpRequest=".onValueHelpRequest"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                            class="sapUiSmallMarginEnd"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{FirstName}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-
-                    <VBox
-                        class="sapUiSmallMarginTop"
-                        height="50px"
-                    >
-                        <Text text="品名" />
-                        <Input
-                            id="MAKT001"
-                            showSuggestion="true"
-                            valueHelpRequest=".onValueHelpRequest"
-                            suggestionItems="{/Employees}"
-                            width="300px"
-                        >
-                            <suggestionItems>
-                                <core:Item text="{FirstName}" />
-                            </suggestionItems>
-                        </Input>
-                    </VBox>
-                </FlexBox>
-                <FlexBox justifyContent="End">
-                    <Button
-                        text="検索"
+                    <Text text="購買グループ" />
+                    <Input
+                        id="EKGRP001"
+                        width="300px"
                         class="sapUiSmallMarginEnd"
-                        press="onFilterPosts"
                     />
-                    <Button
-                        text="クリア"
+                </VBox>
+
+                <VBox
+                    class="sapUiSmallMarginTop"
+                    height="50px"
+                >
+                    <Text text="仕入先" />
+                    <Input
+                        id="LIFNR001"
+                        showSuggestion="true"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest2"
+                        suggestionItems="{/Employees}"
+                        width="300px"
                         class="sapUiSmallMarginEnd"
-                        press="clearInput"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{City}" />
+                        </suggestionItems>
+                    </Input>
+                </VBox>
+
+                <VBox
+                    class="sapUiSmallMarginTop"
+                    height="50px"
+                >
+                    <Text text="呼び名" />
+                    <Input
+                        id="BISMT001"
+                        showSuggestion="true"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest3"
+                        suggestionItems="{/Employees}"
+                        width="300px"
+                        class="sapUiSmallMarginEnd"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{Extension}" />
+                        </suggestionItems>
+                    </Input>
+                </VBox>
+
+                <VBox
+                    class="sapUiSmallMarginBegin sapUiSmallMarginTop"
+                    height="50px"
+                >
+                    <Text text="品目" />
+                    <Input
+                        id="EMATN001"
+                        showSuggestion="true"
+                        showValueHelp="true"
+                        valueHelpRequest=".onValueHelpRequest4"
+                        suggestionItems="{/Employees}"
+                        width="300px"
+                        class="sapUiSmallMarginEnd"
+                    >
+                        <suggestionItems>
+                            <core:Item text="{Country}" />
+                        </suggestionItems>
+                    </Input>
+                </VBox>
+
+                <VBox
+                    class="sapUiSmallMarginTop"
+                    height="50px"
+                >
+                    <Text text="プラント" />
+                    <Input
+                        id="WERKS001"
+                        width="300px"
+                        class="sapUiSmallMarginEnd"
                     />
-                </FlexBox>
-            </content>
+                </VBox>
 
-            <mvc:XMLView id="innerTable" viewName="assignment.view.Table" />
-
-            <footer>
-                <OverflowToolbar>
-                    <ToolbarSpacer />
-                    <Button
-                        type="Accept"
-                        text="登録"
+                <VBox
+                    class="sapUiSmallMarginTop"
+                    height="50px"
+                >
+                    <Text text="品名" />
+                    <Input
+                        id="MAKT001"
+                        width="300px"
                     />
-                </OverflowToolbar>
-            </footer>
-        </Page>
+                </VBox>
+            </FlexBox>
+            <FlexBox justifyContent="End">
+                <Button
+                    text="検索"
+                    class="sapUiSmallMarginEnd"
+                    press="onFilterPosts"
+                />
+                <Button
+                    text="クリア"
+                    class="sapUiSmallMarginEnd"
+                    press="clearInput"
+                />
+            </FlexBox>
+        </content>
 
+        <mvc:XMLView
+            id="innerTable"
+            viewName="assignment.view.Table"
+        />
+
+        <footer>
+            <OverflowToolbar>
+                <ToolbarSpacer />
+                <Button
+                    type="Accept"
+                    text="登録"
+                />
+            </OverflowToolbar>
+        </footer>
+    </Page>
 </mvc:View>
