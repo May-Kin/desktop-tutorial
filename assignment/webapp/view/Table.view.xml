@@ -19,11 +19,11 @@
     >
         <HBox class="sapUiSmallMarginEnd">
             <Text
-                text="新担当者"
+                text="{i18n>newManeInp}"
                 class="sapUiSmallMarginTop sapUiSmallMarginEnd"
             />
             <Input
-                id="productInput"
+                id="NewManeInp001"
                 showSuggestion="true"
                 showValueHelp="true"
                 valueHelpRequest=".onValueHelpRequest"
@@ -37,17 +37,17 @@
 
         <HBox>
             <Button
-                text="一括担当者変更"
+                text="{i18n>buttonNewMane}"
                 class="sapUiSmallMarginEnd"
                 press="onFilterPosts"
             />
             <Button
-                text="追加"
+                text="{i18n>buttonAddTable}"
                 class="sapUiSmallMarginEnd"
                 press="onAddTable"
             />
             <Button
-                text="削除"
+                text="{buttonDeleteTable}"
                 type="Reject"
                 class="textButton sapUiSmallMarginEnd"
                 press="deleteRow"

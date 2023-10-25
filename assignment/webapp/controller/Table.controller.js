@@ -53,7 +53,7 @@ sap.ui.define([
         return;
       }
 
-      this.byId("productInput").setValue(oSelectedItem.getTitle());
+      this.byId("NewManeInp001").setValue(oSelectedItem.getTitle());
     },
 
 

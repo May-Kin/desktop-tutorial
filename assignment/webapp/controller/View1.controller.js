@@ -1,15 +1,13 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller",
-  "sap/ui/model/json/JSONModel",
   "sap/ui/core/Fragment",
   "sap/ui/model/Filter",
   "sap/ui/model/FilterOperator",
-  "sap/m/MessageToast"
 ],
   /**
    * @param {typeof sap.ui.core.mvc.Controller} Controller
    */
-  function (Controller, JSONModel, Fragment, Filter, FilterOperator, MessageToast) {
+  function (Controller, Fragment, Filter, FilterOperator) {
     "use strict";
 
     return Controller.extend("assignment.controller.View1", {
@@ -23,7 +21,7 @@ sap.ui.define([
 
         if (!this._pValueHelpDialog1) {
           this._pValueHelpDialog1 = Fragment.load({
-            id: oView.getId("selectDialog1"),
+            id: oView.byId("selectDialog1"),
             name: "assignment.fragment.ValueHelpDialog1",
             controller: this
           }).then(function (oDialog1) {
@@ -63,7 +61,7 @@ sap.ui.define([
 
         if (!this._pValueHelpDialog2) {
           this._pValueHelpDialog2 = Fragment.load({
-            id: oView.getId("selectDialog2"),
+            id: oView.byId("selectDialog2"),
             name: "assignment.fragment.ValueHelpDialog2",
             controller: this
           }).then(function (oDialog2) {
@@ -191,15 +189,10 @@ sap.ui.define([
 
         const oTable = this.byId(sap.ui.core.Fragment.createId("innerTable", "ZMMT1002"));
 
-        let aFilters1 = [];
-        let aFilters2 = [];
-        let aFilters3 = [];
-        let aFilters4 = [];
-        let aFilters5 = [];
-        let aFilters6 = [];
-        let aFilters7 = [];
+        let sFirstName = [];
 
-        aFilters1.push(new sap.ui.model.Filter("FirstName", sap.ui.model.FilterOperator.Contains, sInput1));
+
+        aFilters1.push(new sap.ui.model.Filter("FirstName", sap.ui.model.FilterOperator.Contains, sFirstName));
         aFilters2.push(new sap.ui.model.Filter("City", sap.ui.model.FilterOperator.Contains, sInput2));
         aFilters3.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput3));
         aFilters4.push(new sap.ui.model.Filter("Extension", sap.ui.model.FilterOperator.Contains, sInput4));
@@ -229,7 +222,7 @@ sap.ui.define([
         if (sInput6) {
           oTable.getBinding("rows").filter(aFilters6);
         }
-        if (sInput7){
+        if (sInput7) {
           oTable.getBinding("rows").filter(aFilters7);
         }
 
@@ -239,27 +232,15 @@ sap.ui.define([
 
       clearInput: function (oEvent) {
 
-        var sInput1 = this.getView().byId("Z_ASGID001");
-        var sInput2 = this.getView().byId("EKGRP001");
-        var sInput3 = this.getView().byId("LIFNR001");
-        var sInput4 = this.getView().byId("BISMT001");
-        var sInput5 = this.getView().byId("EMATN001");
-        var sInput6 = this.getView().byId("WERKS001");
-        var sInput7 = this.getView().byId("MAKT001");
+        this.getView().byId("Z_ASGID001").setValue("");
+        this.getView().byId("EKGRP001").setValue("");
+        this.getView().byId("LIFNR001").setValue("");
+        this.getView().byId("BISMT001").setValue("");
+        this.getView().byId("EMATN001").setValue("");
+        this.getView().byId("WERKS001").setValue("");
+        this.getView().byId("MAKT001").setValue("");
 
-        sInput1.setValue("");
-        sInput2.setValue("");
-        sInput3.setValue("");
-        sInput4.setValue("");
-        sInput5.setValue("");
-        sInput6.setValue("");
-        sInput7.setValue("");
-
-        const oTable = this.byId(sap.ui.core.Fragment.createId("innerTable", "ZMMT1002"));
-
-        let aFilters = [];
-
-        oTable.getBinding("rows").filter(aFilters);
+        this.byId(sap.ui.core.Fragment.createId("innerTable", "ZMMT1002")).getBinding("rows").filter([]);
       },
 
 

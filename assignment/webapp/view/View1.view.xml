@@ -18,7 +18,7 @@
                     />
                     <Title
                         level="H1"
-                        text="資材担当者振分マスタ登録画面"
+                        text="{i18n>headerText}"
                     />
                 </contentLeft>
             </Bar>
@@ -29,7 +29,7 @@
                 width="70%"
             >
                 <VBox class="sapUiSmallMarginBegin sapUiSmallMarginTop">
-                    <Text text="担当者" />
+                    <Text text="{i18n>pic}" />
                     <Input
                         id="Z_ASGID001"
                         showSuggestion="true"
@@ -49,7 +49,7 @@
                     class="sapUiSmallMarginTop"
                     height="50px"
                 >
-                    <Text text="購買グループ" />
+                    <Text text="{i18n>purchaseGroup}" />
                     <Input
                         id="EKGRP001"
                         width="300px"
@@ -61,7 +61,7 @@
                     class="sapUiSmallMarginTop"
                     height="50px"
                 >
-                    <Text text="仕入先" />
+                    <Text text="{i18n>vendor}" />
                     <Input
                         id="LIFNR001"
                         showSuggestion="true"
@@ -81,7 +81,7 @@
                     class="sapUiSmallMarginTop"
                     height="50px"
                 >
-                    <Text text="呼び名" />
+                    <Text text="{i18n>name}" />
                     <Input
                         id="BISMT001"
                         showSuggestion="true"
@@ -101,7 +101,7 @@
                     class="sapUiSmallMarginBegin sapUiSmallMarginTop"
                     height="50px"
                 >
-                    <Text text="品目" />
+                    <Text text="{i18n>material}" />
                     <Input
                         id="EMATN001"
                         showSuggestion="true"
@@ -121,7 +121,7 @@
                     class="sapUiSmallMarginTop"
                     height="50px"
                 >
-                    <Text text="プラント" />
+                    <Text text="{i18n>plant}" />
                     <Input
                         id="WERKS001"
                         width="300px"
@@ -133,7 +133,7 @@
                     class="sapUiSmallMarginTop"
                     height="50px"
                 >
-                    <Text text="品名" />
+                    <Text text="{i18n>productName}" />
                     <Input
                         id="MAKT001"
                         width="300px"
@@ -142,12 +142,12 @@
             </FlexBox>
             <FlexBox justifyContent="End">
                 <Button
-                    text="検索"
+                    text="{i18n>searchButton}"
                     class="sapUiSmallMarginEnd"
                     press="onFilterPosts"
                 />
                 <Button
-                    text="クリア"
+                    text="{i18n>clearButton}"
                     class="sapUiSmallMarginEnd"
                     press="clearInput"
                 />
@@ -164,7 +164,7 @@
                 <ToolbarSpacer />
                 <Button
                     type="Accept"
-                    text="登録"
+                    text="{i18n>register}"
                 />
             </OverflowToolbar>
         </footer>
