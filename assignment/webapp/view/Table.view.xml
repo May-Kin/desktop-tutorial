@@ -44,7 +44,7 @@
             <Button
                 text="追加"
                 class="sapUiSmallMarginEnd"
-                press="onAdd"
+                press="onAddTable"
             />
             <Button
                 text="削除"
@@ -72,7 +72,7 @@
             <t:Column>
                 <m:Label text="購買グループ" />
                 <t:template>
-                    <m:Input value="{FirstName} {LastName}" />
+                    <m:Input value="{City}" />
                 </t:template>
             </t:Column>
             <t:Column>
@@ -126,13 +126,13 @@
                     <Input
                         id="Z_ASGID001"
                         showSuggestion="true"
-                        value="{Extension}"
+                        value="{FirstName}"
                         showValueHelp="true"
                         valueHelpRequest=".onValueHelpRequest"
                         suggestionItems="{/Employees}"
                     >
                         <suggestionItems>
-                            <core:Item text="{Extension}" />
+                            <core:Item text="{FirstName}" />
                         </suggestionItems>
                     </Input>
                 </t:template>
